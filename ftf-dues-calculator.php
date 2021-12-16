@@ -183,9 +183,7 @@ function ftfdc_field_equation_cb( $args ) {
               name="ftfdc_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
               cols="50" rows="10"
               style="font-family:monospace;"
-    >
-    <?php echo isset( $options[ $args['label_for'] ] ) ? ( $options[ $args['label_for'] ] ) : ( '' ); ?>
-    </textarea>
+    ><?php echo isset( $options[ $args['label_for'] ] ) ? ( $options[ $args['label_for'] ] ) : ( '' ); ?></textarea>
     <p class="description">
         This must be a valid JavaScript function body that returns a number
         which will be formatted and inserted into the page. The variable <code>sales</code> is the
