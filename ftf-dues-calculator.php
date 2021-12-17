@@ -99,7 +99,10 @@ add_action( 'admin_init', 'ftfdc_settings_init' );
  */
 function ftfdc_section_appearance_callback( $args ) {
     ?>
-    <p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Customize the appearance of the dues calculator widget.', 'ftfdc' ); ?></p>
+    <p id="<?php echo esc_attr( $args['id'] ); ?>">
+        Customize the appearance of the dues calculator widget. Insert the widget into any page
+        using the shortcode <code>[dues_calculator]</code>.
+    </p>
     <?php
 }
 
@@ -253,7 +256,6 @@ if ( ! function_exists( 'ftfdc_options_page' ) ) {
 if ( ! function_exists( 'ftfdc_shortcode' ) ) {
     function ftfdc_shortcode() {
         $options = get_option( 'ftfdc_options' );
-        var_dump($options);
         if (isset( $options['ftfdc_field_hide'] )) {
            return '<div class="ftfdc-container-hidden" style="display:none;"></div>';
         }
@@ -345,7 +347,7 @@ if ( ! function_exists( 'ftfdc_css' ) ) {
             width: 60px;
             z-index: 1;
         }
-        .ftfdc-container .ftfdc-input {
+        .ftfdc-container .ftfdc-input_group input.ftfdc-input {
             background: #fff;
             border: 1px solid #f2f2f2;
             border-radius: 40px;
